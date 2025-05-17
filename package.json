@@ -1,0 +1,91 @@
+{
+	"name": "nextjs-15-kaosaren-xuxurla",
+	"description": "Un starter para levantar estructuras digitales como quien invoca demonios: con precisión, miedo y una taza de café. | El susurro del caos, quebrantando el orden celestial.",
+	"version": "0.0.1",
+	"scripts": {
+		"turbo": "next dev --turbopack",
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/anxelli/nextjs-15-kaosaren-xuxurla.git"
+	},
+	"homepage": "https://github.com/anxelli/nextjs-15-kaosaren-xuxurla",
+	"bugs": {
+		"url": "https://github.com/anxelli/nextjs-15-kaosaren-xuxurla/issues"
+	},
+	"keywords": [
+		"nextjs",
+		"nextjs-15",
+		"typescript",
+		"react-19",
+		"app-router",
+		"turbopack",
+		"metadata",
+		"optimized-seo",
+		"schemas",
+		"vercel-analytics",
+		"google-tag-manager",
+		"tailwindcss",
+		"motion",
+		"animations",
+		"smooth-scroll",
+		"scroll-reveal",
+		"react-icons",
+		"next-view-transitions",
+		"custom-page-transitions"
+	],
+	"author": {
+		"name": "Angel Amaro & Nyxia Lovelace",
+		"email": "anxelli.dev@icloud.com",
+		"company": "arteDigitalMX",
+		"website": "https://anxelli.dev",
+		"url": "https://nyxia.dev",
+		"twitter": "@anxelli_dev",
+		"github": "@anxelli"
+	},
+	"contributors": [
+		{
+			"name": "Angel Amaro",
+			"email": "anxelli.dev@icloud.com",
+			"website": "https://x.com/NyxiaLovelace",
+			"github": "@anxelli",
+			"x": "@anxelli_dev"
+		},
+		{
+			"name": "Nyxia Lovelace",
+			"email": "rule34@nyxia.dev",
+			"website": "https://nyxia.dev",
+			"x": "@nyxia_lovelace"
+		}
+	],
+	"private": false,
+	"license": "GPL-3.0-or-later",
+	"dependencies": {
+		"@next/third-parties": "15.3.2",
+		"@vercel/analytics": "1.5.0",
+		"@vercel/speed-insights": "1.2.0",
+		"motion": "12.12.1",
+		"next": "15.3.2",
+		"next-view-transitions": "0.3.4",
+		"react": "19.1.0",
+		"react-dom": "19.1.0",
+		"react-icons": "5.5.0",
+		"schema-dts": "1.1.5",
+		"zod": "3.24.4"
+	},
+	"devDependencies": {
+		"@eslint/eslintrc": "3.3.1",
+		"@tailwindcss/postcss": "4.1.7",
+		"@types/node": "22.15.18",
+		"@types/react": "19.1.4",
+		"@types/react-dom": "19.1.5",
+		"eslint": "9.27.0",
+		"eslint-config-next": "15.3.2",
+		"tailwindcss": "4.1.7",
+		"typescript": "5.8.3"
+	}
+}
