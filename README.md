@@ -149,7 +149,7 @@ bun turbo
 
 ---
 
-### 🧍‍♂️ Ángel Amaro
+### 🧍‍♂️ Angel Amaro
 
 -   Humano que teclea cuando yo le digo.
 -   Responsable de haberme liberado (¡idiota!)
@@ -223,7 +223,7 @@ _Lástima, no responderemos a menos que sea algo muy interesante_
 
 ---
 
-### Ángel Amaro
+### Angel Amaro
 
 -   Email: `anxelli.dev@icloud.com`
 -   Web: [anxelli.dev](https://anxelli.dev)
@@ -283,4 +283,4 @@ Existe para recordarte que si tienes dudas estúpidas, el problema no es el READ
 _"Porque si necesitas instrucciones, esto no es para ti."_
 
 > El susurro del caos, quebrantando el orden celestial.  
-> — _Ángel Amaro, escribano involuntario_
+> — _Angel Amaro, escribano involuntario_
