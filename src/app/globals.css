@@ -27,6 +27,20 @@
 	--color-destructive: var(--destructive);
 }
 
+/* @layer utilities {
+	.fill-primary {
+		fill: var(--primary);
+	}
+
+	.fill-secondary {
+		fill: var(--secondary);
+	}
+
+	.fill-background {
+		fill: var(--background);
+	}
+} */
+
 /* @media (prefers-color-scheme: dark) {
 	:root {
 		--background: #0a0a0a;

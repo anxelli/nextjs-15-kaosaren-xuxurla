@@ -9,9 +9,41 @@ import {
 	Circles,
 	CirclesTime
 } from '@/components/transitions/circles'
+import {
+	SquaresRandom,
+	SquaresRandomTime,
+	Squares,
+	SquaresTime
+} from '@/components/transitions/squares'
+import {
+	StarsRandom,
+	StarsRandomTime,
+	Stars,
+	StarsTime
+} from '@/components/transitions/stars'
+import {
+	TrianglesRandom,
+	TrianglesRandomTime,
+	Triangles,
+	TrianglesTime
+} from '@/components/transitions/triangles'
+import {
+	SpikesRandom,
+	SpikesRandomTime,
+	Spikes,
+	SpikesTime
+} from '@/components/transitions/spikes'
+import {
+	BarsRandom,
+	BarsRandomTime,
+	Bars,
+	BarsTime
+} from '@/components/transitions/bars'
 
-// 🔥 Tipos válidos para transiciones
-type CircleVariant =
+import { Corruption, CorruptionTime } from '@/components/transitions/corruption'
+
+// Tipos válidos para posiciones
+type ShapePosition =
 	| 'center'
 	| 'topCenter'
 	| 'topLeft'
@@ -20,13 +52,24 @@ type CircleVariant =
 	| 'bottomLeft'
 	| 'bottomRight'
 
-type TransitionStyle = `circles-${'random' | CircleVariant}`
+// Tipos válidos para TRANSITION_STYLE
+type TransitionStyle =
+	| `circles-${'random' | ShapePosition}`
+	| `squares-${'random' | ShapePosition}`
+	| `stars-${'random' | ShapePosition}`
+	| `triangles-${'random' | ShapePosition}`
+	| `spikes-${'random' | ShapePosition}`
+	| `bars-${'random' | ShapePosition}`
+	| 'corruption' // Sin posición, usa FadeIn true
 
-// 🔥 Control central de transiciones
+//! 🔥 Configuración de la transición
 const TRANSITIONS_ENABLED = true
-const TRANSITION_FADEIN = false
+const TRANSITION_FADEIN = false // Recomendado activar para transiciones sin posición
 const TRANSITION_STYLE: TransitionStyle = 'circles-random'
+const TRANSITION_IMAGE = '/chibyxia-shh.png'
+//! 🔥 Configuración de la transición
 
+// Configuración de la transición
 export default function Template({ children }: { children: React.ReactNode }) {
 	const pathname = usePathname()
 
@@ -36,20 +79,117 @@ export default function Template({ children }: { children: React.ReactNode }) {
 	let TransitionTime = 300
 
 	const [type, variant] = TRANSITION_STYLE.split('-') as [
-		'circles',
-		'random' | CircleVariant
+		(
+			| 'circles'
+			| 'squares'
+			| 'stars'
+			| 'triangles'
+			| 'spikes'
+			| 'bars'
+			| 'corruption'
+		),
+		'random' | ShapePosition
 	]
 
 	switch (type) {
 		case 'circles':
 			if (variant === 'random') {
-				TransitionEffect = CirclesRandom
+				// eslint-disable-next-line react/display-name
+				TransitionEffect = () => (
+					<CirclesRandom image={TRANSITION_IMAGE} />
+				)
 				TransitionTime = CirclesRandomTime
 			} else {
 				// eslint-disable-next-line react/display-name
-				TransitionEffect = () => <Circles position={variant} />
+				TransitionEffect = () => (
+					<Circles position={variant} image={TRANSITION_IMAGE} />
+				)
 				TransitionTime = CirclesTime
 			}
+			break
+
+		case 'squares':
+			if (variant === 'random') {
+				// eslint-disable-next-line react/display-name
+				TransitionEffect = () => (
+					<SquaresRandom image={TRANSITION_IMAGE} />
+				)
+				TransitionTime = SquaresRandomTime
+			} else {
+				// eslint-disable-next-line react/display-name
+				TransitionEffect = () => (
+					<Squares position={variant} image={TRANSITION_IMAGE} />
+				)
+				TransitionTime = SquaresTime
+			}
+			break
+
+		case 'stars':
+			if (variant === 'random') {
+				// eslint-disable-next-line react/display-name
+				TransitionEffect = () => (
+					<StarsRandom image={TRANSITION_IMAGE} />
+				)
+				TransitionTime = StarsRandomTime
+			} else {
+				// eslint-disable-next-line react/display-name
+				TransitionEffect = () => (
+					<Stars position={variant} image={TRANSITION_IMAGE} />
+				)
+				TransitionTime = StarsTime
+			}
+			break
+
+		case 'triangles':
+			if (variant === 'random') {
+				// eslint-disable-next-line react/display-name
+				TransitionEffect = () => (
+					<TrianglesRandom image={TRANSITION_IMAGE} />
+				)
+				TransitionTime = TrianglesRandomTime
+			} else {
+				// eslint-disable-next-line react/display-name
+				TransitionEffect = () => (
+					<Triangles position={variant} image={TRANSITION_IMAGE} />
+				)
+				TransitionTime = TrianglesTime
+			}
+			break
+
+		case 'spikes':
+			if (variant === 'random') {
+				// eslint-disable-next-line react/display-name
+				TransitionEffect = () => (
+					<SpikesRandom image={TRANSITION_IMAGE} />
+				)
+				TransitionTime = SpikesRandomTime
+			} else {
+				// eslint-disable-next-line react/display-name
+				TransitionEffect = () => (
+					<Spikes position={variant} image={TRANSITION_IMAGE} />
+				)
+				TransitionTime = SpikesTime
+			}
+			break
+
+		case 'bars':
+			if (variant === 'random') {
+				// eslint-disable-next-line react/display-name
+				TransitionEffect = () => <BarsRandom image={TRANSITION_IMAGE} />
+				TransitionTime = BarsRandomTime
+			} else {
+				// eslint-disable-next-line react/display-name
+				TransitionEffect = () => (
+					<Bars position={variant} image={TRANSITION_IMAGE} />
+				)
+				TransitionTime = BarsTime
+			}
+			break
+
+		case 'corruption':
+			// eslint-disable-next-line react/display-name
+			TransitionEffect = () => <Corruption image={TRANSITION_IMAGE} />
+			TransitionTime = CorruptionTime
 			break
 	}
 

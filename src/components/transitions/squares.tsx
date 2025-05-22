@@ -3,10 +3,10 @@
 import { motion } from 'motion/react'
 import { useEffect, useState } from 'react'
 
-const circleBaseStyle =
-	'absolute rounded-full w-[0px] h-[0px] pointer-events-none translate-x-[-50%] translate-y-[-50%]'
+const squareBaseStyle =
+	'absolute rounded-none w-[0px] h-[0px] pointer-events-none translate-x-[-50%] translate-y-[-50%] rotate-[45deg]'
 
-type CirclePosition =
+type SquarePosition =
 	| 'center'
 	| 'topCenter'
 	| 'topLeft'
@@ -15,12 +15,12 @@ type CirclePosition =
 	| 'bottomLeft'
 	| 'bottomRight'
 
-export const CirclesTime = 2100
-export const Circles = ({
+export const SquaresTime = 2100
+export const Squares = ({
 	position,
 	image
 }: {
-	position: CirclePosition
+	position: SquarePosition
 	image?: string
 }) => {
 	const [startExit, setStartExit] = useState(false)
@@ -75,7 +75,7 @@ export const Circles = ({
 					delay: startExit ? 0.6 : 0,
 					ease: 'easeInOut'
 				}}
-				className={`${circleBaseStyle} bg-primary`}
+				className={`${squareBaseStyle} bg-primary`}
 				style={pos1}
 			/>
 
@@ -91,7 +91,7 @@ export const Circles = ({
 					delay: startExit ? 0.3 : 0.3,
 					ease: 'easeInOut'
 				}}
-				className={`${circleBaseStyle} bg-secondary`}
+				className={`${squareBaseStyle} bg-secondary`}
 				style={pos2}
 			/>
 
@@ -107,7 +107,7 @@ export const Circles = ({
 					delay: startExit ? 0 : 0.6,
 					ease: 'easeInOut'
 				}}
-				className={`${circleBaseStyle} bg-background`}
+				className={`${squareBaseStyle} bg-background`}
 				style={pos3}
 			/>
 
@@ -128,8 +128,8 @@ export const Circles = ({
 	)
 }
 
-export const CirclesRandomTime = 2100
-export const CirclesRandom = ({ image }: { image?: string }) => {
+export const SquaresRandomTime = 2100
+export const SquaresRandom = ({ image }: { image?: string }) => {
 	const [startExit, setStartExit] = useState(false)
 	const [visible, setVisible] = useState(true)
 	const [mounted, setMounted] = useState(false)
@@ -175,7 +175,7 @@ export const CirclesRandom = ({ image }: { image?: string }) => {
 					delay: startExit ? 0.6 : 0,
 					ease: 'easeInOut'
 				}}
-				className={`${circleBaseStyle} bg-primary`}
+				className={`${squareBaseStyle} bg-primary`}
 				style={pos1}
 			/>
 
@@ -191,7 +191,7 @@ export const CirclesRandom = ({ image }: { image?: string }) => {
 					delay: startExit ? 0.3 : 0.3,
 					ease: 'easeInOut'
 				}}
-				className={`${circleBaseStyle} bg-secondary`}
+				className={`${squareBaseStyle} bg-secondary`}
 				style={pos2}
 			/>
 
@@ -207,7 +207,7 @@ export const CirclesRandom = ({ image }: { image?: string }) => {
 					delay: startExit ? 0 : 0.6,
 					ease: 'easeInOut'
 				}}
-				className={`${circleBaseStyle} bg-background`}
+				className={`${squareBaseStyle} bg-background`}
 				style={pos3}
 			/>
 
